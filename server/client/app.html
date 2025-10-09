@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bangalore House Price Predictor</title>
 
-    <!-- Scripts -->
+    <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="app.js"></script>
+    
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
 </head>
 <body>
     <!-- Fixed Header -->
@@ -23,7 +25,7 @@
         <!-- Left Section: Area + Bath -->
         <div class="form-section">
             <h2>Area (Square Feet)</h2>
-            <input type="email" id="uiSqft" name="Squareft" value="1000">
+            <input type="number" id="uiSqft" name="Squareft" value="1000">
 
             <h2>Bath</h2>
             <div class="switch-field">
@@ -59,8 +61,6 @@
             <h2>Location</h2>
             <select id="uiLocations">
                 <option value="" disabled selected>Choose a Location</option>
-                <option>Electronic City</option>
-                <option>Rajaji Nagar</option>
             </select>
 
             <button class="submit" onclick="onClickedEstimatePrice()" type="button">Estimate Price</button>
@@ -69,3 +69,4 @@
     </div>
 </body>
 </html>
+
